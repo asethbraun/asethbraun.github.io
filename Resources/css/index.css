@@ -4,6 +4,14 @@
     padding: 0px;
 }
 
+a:link { 
+    text-decoration: none;
+}
+
+a:visited{
+    color: hsl(208, 47%, 30%);
+}
+
 html{
     width: 100vw;
 }
@@ -92,7 +100,7 @@ main{
     float: right;
     clear: right;
     position: relative;
-    overflow: scroll;
+    /*overflow: scroll;*/
     box-sizing: border-box;
     padding: 1%;
     top: -10%;

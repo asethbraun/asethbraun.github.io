@@ -72,18 +72,19 @@ header li:hover{
 
 main{
     width: 100%;
-    /*position: relative;
-    display: block;*/
-    /*margin-top: 150px;*/
+    background-color: hsl(208, 47%, 90%);
+    height: 100%;
 }
+
 
 .profile{
     background-color: hsl(208, 47%, 90%);
     padding: 5%;
     width: 100%;
     box-sizing: border-box;
-    height: 1000px;
-}
+    height: 100%;
+}    
+
 
 .profile img{
     float: left;

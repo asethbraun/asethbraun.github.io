@@ -99,12 +99,13 @@ main{
 }
 
 .profile span{
+    text-align: justify;
     float: right;
     clear: right;
     position: relative;
     /*overflow: scroll;*/
     box-sizing: border-box;
-    padding: 1%;
+    padding: 2%;
     top: -10%;
     width: 66%;
     margin-top: 0%;

@@ -18,13 +18,14 @@ html{
 
 body{
     flex-direction: column;
-    overflow: hidden;
+    /*overflow: hidden;*/
     height: 100vh;
 }
 
 header{
     display: flex;
     flex: 1 0 auto;
+    position: sticky;
     align-items: center;
     height: 10vh;
     width: 100%;

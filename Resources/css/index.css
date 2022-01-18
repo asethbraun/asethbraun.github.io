@@ -99,7 +99,7 @@ main{
 }
 
 .profile span{
-    text-align: justify;
+    text-align: left;
     float: right;
     clear: right;
     position: relative;

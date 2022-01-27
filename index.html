@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./Resources/css/index.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="./Resources/img/profPic.PNG">
+    <script src="./Resources/js/index.js" defer></script>
     <title>A. Seth Braun</title>
 </head>
 <body class="flex-container">
@@ -18,25 +20,28 @@
     <div class="scroll-container">
         <main>
             <div class="profile">
-                <img src="./Resources/img/profPic.PNG" alt="Picture of Seth"/>
-                <span>
-                    I am currently working as an RF Test Engineer, 
-                    but am also interested in developing applications related 
-                    to language learning and general education 
-                </span>
+                <div id="profPic">
+                    <img src="./Resources/img/profPic.PNG" alt="Picture of Seth"/>
+                </div>
+                <div id="bio">
+                    I'm currently working as an RF Test Engineer, 
+                    but am also interested in devloping new 
+                    cross-platform applications
+                </div>
             </div>
             <div class="content">
                 Test
             </div>
+            <canvas id="game" >Canvas not supported</canvas>
         </main>
         <footer>
             <ul class="footerinfo">
                 <li><a>asethbraun@gmail.com</a></li>
                 <li><a>©
                     <script>
-                        document.write(/\d{4/.exec(Date())[0])
+                        document.write(/\d{4}/.exec(Date())[0])
                     </script>
-                    2022 Allen Seth Braun</a></li>
+                    Allen Seth Braun</a></li>
             </ul>
         </footer>
     </div>

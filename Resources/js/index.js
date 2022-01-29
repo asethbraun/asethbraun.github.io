@@ -7,18 +7,22 @@ const lightPatina = "#E0EbE7";
 
 const imgSrc = "./Resources/img/possum.png";
 
+let x = 20;
+let y = 20;
+let up = false;
+let down = false;
+let left = false;
+let right = false;
+
 let possumPic = new Image();
 possumPic.src = imgSrc;
+possumPic.height = 50.1/1.2 //* 0.01 * canvas.width;
+possumPic.width = 54.6/1.2 //* 0.01 * canvas.width;
 
-canvas.width = window.innerWidth * 0.90;
+canvas.width = window.innerWidth * 0.85;
 canvas.height = window.innerHeight * 0.50;
 
 window.addEventListener("resize", resizeCanvas)
-
-function resizeCanvas(){
-    canvas.width = window.innerWidth * .90;
-    canvas.height = window.innerHeight * 0.50;
-}
 
 ctx.strokeStyle = lightPatina;
 ctx.lineWidth = 0.25;
@@ -27,7 +31,19 @@ ctx.fillStyle = "#000";//darkPatina;
 
 ctx.fill();
 possumPic.onload = function(){
-    //ctx.drawImage(possumPic, 20, 20, 54.6, 50.1);
+    ctx.drawImage(possumPic, x, y, possumPic.width, possumPic.height);
+}
+
+function resizeCanvas(){
+    //possumPic.height = 50.1 * 0.01 * canvas.width;
+    //possumPic.width = 54.6 * 0.01 * canvas.width;
+    canvas.width = window.innerWidth * 0.85;
+    canvas.height = window.innerHeight * 0.50;
+    x = Math.min(x, canvas.width-possumPic.width);
+    y = Math.min(y, canvas.height-possumPic.height);
+    x = Math.max(x, 0);
+    y = Math.max(y, 0);
+    ctx.drawImage(possumPic, x, y, possumPic.width, possumPic.height);
 }
 
 canvas.onfocus = function(){
@@ -44,13 +60,6 @@ canvas.onblur = () => {
     
     document.removeEventListener('keyup', handleKeyUp);
 };
-
-let x = 20;
-let y = 20;
-let up = false;
-let down = false;
-let left = false;
-let right = false;
 
 function handleKeyDown(Event){
     Event.preventDefault();
@@ -93,23 +102,31 @@ function handleKeyUp(Event){
 
 function move(){
     if(left){
+        if(x>0){
         x--;
+        }
     }
     if(right){
-        x++;
+        if(x<canvas.width-possumPic.width){
+            x++;
+        }
     }
     if(up){
-        y--;
-    }
+        if(y>0){
+            y--;
+        }
+   }
     if(down){
-        y++;
+        if(y<canvas.height-possumPic.height){
+            y++;
+        }
     }
 }
 
 function gameLoop(){
     if(active){
         ctx.clearRect(0,0, canvas.width, canvas.height);
-        ctx.drawImage(possumPic, x, y, 54.6/1.5, 50.1/1.5);
+        ctx.drawImage(possumPic, x, y, possumPic.width, possumPic.height);
         move();
         window.requestAnimationFrame(gameLoop);
     }

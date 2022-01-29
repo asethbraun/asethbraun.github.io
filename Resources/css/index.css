@@ -145,7 +145,7 @@ main{
 }
 
 #gamebox{
-    margin: 30px;
+    margin: 30px 7.5%;
     flex: 1 0 auto;
     box-sizing: border-box;
     display: flex;

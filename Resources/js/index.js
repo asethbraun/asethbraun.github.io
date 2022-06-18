@@ -7,20 +7,23 @@ const lightPatina = "#E0EbE7";
 
 const imgSrc = "./Resources/img/possum.png";
 
-let x = 20;
-let y = 20;
+
 let up = false;
 let down = false;
 let left = false;
 let right = false;
+let speed = 3;
 
 let possumPic = new Image();
 possumPic.src = imgSrc;
-possumPic.height = 50.1/1.2 //* 0.01 * canvas.width;
-possumPic.width = 54.6/1.2 //* 0.01 * canvas.width;
+possumPic.height = 3*50.1/1.2 //* 0.01 * canvas.width;
+possumPic.width = 3*54.6/1.2 //* 0.01 * canvas.width;
 
 canvas.width = window.innerWidth * 0.85;
 canvas.height = window.innerHeight * 0.50;
+
+let x = canvas.width/2 - possumPic.width/2;
+let y = canvas.height/2 - possumPic.height/2;
 
 window.addEventListener("resize", resizeCanvas)
 
@@ -103,22 +106,22 @@ function handleKeyUp(Event){
 function move(){
     if(left){
         if(x>0){
-        x--;
+        x=x-speed;
         }
     }
     if(right){
         if(x<canvas.width-possumPic.width){
-            x++;
+            x=x+speed;
         }
     }
     if(up){
         if(y>0){
-            y--;
+            y=y-speed;
         }
    }
     if(down){
         if(y<canvas.height-possumPic.height){
-            y++;
+            y=y+speed;
         }
     }
 }
